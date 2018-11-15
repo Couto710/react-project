@@ -1,0 +1,41 @@
+#form select, #form input {
+  margin: 0.5em 0;
+  border: 2px solid rgba(15, 119, 223, 0.9);
+}
+
+#form {
+  width: 400px;
+}
+#form p {
+  display: inline-block;
+  width: 5em;
+  margin: 5px 2px;
+  color: rgba(15, 119, 223, 0.9);
+}
+#form input {
+  width: 15em;
+  height: 1.8em;
+}
+#form select {
+  width: 15.3em;
+  height: 2.25em;
+  background-color: white;
+  color: rgba(15, 119, 223, 0.9);
+}
+#form select option {
+  color: rgba(15, 119, 223, 0.9);
+}
+#form button {
+  height: 2.3em;
+  width: 9em;
+  margin: 3em 0 1em 12.5em;
+  border: 2px solid rgba(15, 119, 223, 0.9);
+  background-color: gainsboro;
+  color: rgba(15, 119, 223, 0.9);
+  font-weight: bold;
+}
+#form ::placeholder {
+  color: rgba(15, 119, 223, 0.9);
+}
+
+/*# sourceMappingURL=Form.css.map */

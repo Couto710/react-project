@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/Form.css'
 
 export class Form extends React.Component {
 
@@ -23,19 +24,17 @@ export class Form extends React.Component {
 	render(){
 
 		return (
-			<div id="formcontainer">
-				<form>
-					<span>Name: </span><input type="text" name="name" placeholder="name here"/><br/>
-					<span>Surname: </span><input type="text" name="surname" placeholder="name here"/><br/>
-					<span>Country: </span>
+				<form id="form">
+					<p>Name: </p><input type="text" name="name" placeholder=" name here"/><br/>
+					<p>Surname: </p><input type="text" name="surname" placeholder=" name here"/><br/>
+					<p>Country: </p>
 					<select placeholder="Countries">
 						<option value="" disabled selected>Countries</option>
 						{this.state.countries}
 					</select><br/>
-					<span>Birthday</span><input type="text" name="birthday" placeholder="mm/dd/yyyy"/><br/>
+					<p>Birthday: </p><input type="text" name="birthday" placeholder=" mm/dd/yyyy"/><br/>
 					<button type="submit" value="save">Save</button>
 				</form>
-			</div>
 			)
 		
 	}
