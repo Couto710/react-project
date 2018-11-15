@@ -7,10 +7,6 @@ export class Form extends React.Component {
 		super(props);
 		this.state ={
 			countries: [],
-			name: "",
-			surname: "",
-			country: "",
-			birthday: ""
 		};
 
 		this.handleName = this.handleName.bind(this);
@@ -30,23 +26,19 @@ export class Form extends React.Component {
 	}
 
 	handleName(e){
-		this.setState({name: e.target.value});
-		console.log(this.state.name);
+		this.props.changeName(e.target.value);
 	}
 
 	handleSurname(e) {
-		this.setState({surname: e.target.value});
-		console.log(this.state.surname);
+		this.props.changeSurname(e.target.value);
 	}
 
 	handleSelect(e) {
-		this.setState({country: e.target.value});
-		console.log(this.state.country);
+		this.props.changeSelect(e.target.value);
 	}
 
 	handleBirthday(e) {
-		this.setState({birthday: e.target.value});
-		console.log(this.state.birthday);
+		this.props.changeBirthday(e.target.value);
 	}
 
 	handleSubmit() {
