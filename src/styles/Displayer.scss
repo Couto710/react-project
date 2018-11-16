@@ -1,4 +1,26 @@
 #table {
     width: 100%;
+    border-spacing: 0;
+    
+    #r1{
+        width: 40%;
+    }
+
+    #r2 {
+        width: 30%;
+    }
+
+    #r3{
+        width: 30%;
+    }
+
+    tr {
+        height: 2.4em;
+    }
+
+    th {
+        border-bottom: 2px solid rgb(143, 141, 141);
+        text-align: left;
+    }
     
 }

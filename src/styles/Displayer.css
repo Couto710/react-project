@@ -1,5 +1,22 @@
 #table {
   width: 100%;
+  border-spacing: 0;
+}
+#table #r1 {
+  width: 40%;
+}
+#table #r2 {
+  width: 30%;
+}
+#table #r3 {
+  width: 30%;
+}
+#table tr {
+  height: 2.4em;
+}
+#table th {
+  border-bottom: 2px solid #8f8d8d;
+  text-align: left;
 }
 
 /*# sourceMappingURL=Displayer.css.map */
