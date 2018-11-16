@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/Container.css'
-import {Form} from './Form'
+import './styles/Container.css';
+import {Form} from './Form';
+import {Displayer} from './Displayer';
+
 
 export class Container extends React.Component {
 
@@ -55,15 +56,14 @@ export class Container extends React.Component {
 					/>
 				</div>
 
-				<div id="table">
+				<div id="tablediv">
+					<Displayer />
 				</div>
 
 				<div id="sentence">
 				</div>
 
 			</div>
-
-			)
+		)
 	}
-
 }

@@ -1,8 +1,20 @@
 #cont {
-	border: 2px solid rgba(15, 119, 223,.9);
-	display: block;
-	margin: 50px auto;
-	padding: 2%;
-	width: 80%;
+	display: inline-block;
+	margin: 50px 5%;
+	width: 90%;
+}
 
+#forminputs {
+	width: 30%;
+	min-width: 260px;
+	max-width: 360px;
+	margin-right: 2.5%;
+	display: inline-block;
+}
+
+#tablediv {
+	width: 50%;
+	margin: 0;
+	display: inline-block;
+	position: absolute;
 }
