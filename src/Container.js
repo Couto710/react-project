@@ -12,7 +12,14 @@ export class Container extends React.Component {
 			name: "",
 			surname: "",
 			country: "",
-			birthday: ""
+			birthday: "",
+			rows: [
+				<tr>
+					<td>Ragnar Lothbrok</td>
+					<td>Denmark</td>
+					<td>03/24/1994</td>    
+				</tr>					
+			]
 		};
 
 		this.changeName = this.changeName.bind(this);
@@ -41,8 +48,6 @@ export class Container extends React.Component {
 		console.log(this.state.birthday);
 	}
 
-
-
 	render() {
 		return (
 
@@ -57,7 +62,7 @@ export class Container extends React.Component {
 				</div>
 
 				<div id="tablediv">
-					<Displayer />
+					<Displayer rows={this.state.rows}/>
 				</div>
 
 				<div id="sentence">

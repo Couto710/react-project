@@ -13,7 +13,8 @@ export class Displayer extends React.Component {
                     <th id="r1">name</th>
                     <th id="r2">Country</th>
                     <th id="r3">birthday</th>    
-                </tr>            
+                </tr>
+                {this.props.rows}
             </table>
         )
     }
