@@ -13,6 +13,7 @@ export class Form extends React.Component {
 		this.handleSurname = this.handleSurname.bind(this);
 		this.handleSelect = this.handleSelect.bind(this);
 		this.handleBirthday = this.handleBirthday.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentWillMount(){
@@ -42,7 +43,7 @@ export class Form extends React.Component {
 	}
 
 	handleSubmit() {
-
+		this.props.submit();
 	}
 	
 
