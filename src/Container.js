@@ -11,7 +11,7 @@ export class Container extends React.Component {
 		this.state={
 			name: "",
 			surname: "",
-			country: "",
+			country: "countries",
 			birthday: "",
 			rows: [
 				<tr>
@@ -70,35 +70,21 @@ export class Container extends React.Component {
 		}
 
 		else{
-			console.log(this.state.name);
-			console.log(this.state.surname);
-			console.log(this.state.country);
-			console.log(this.state.birthday);
-
 			let fullname = this.state.name + " " + this.state.surname;
 			
-			let row = <tr>
-						  <td>{fullname}</td>
-						  <td>{this.state.country}</td>
-						  <td>{this.state.birthday}</td>    
-					  </tr>;
+			let row =<tr>
+						<td>{fullname}</td>
+						<td>{this.state.country}</td>
+						<td>{this.state.birthday}</td>    
+					</tr>;
 			
-			let newrows = this.state.rows;
-			console.log(newrows.length);
-			newrows.push(row);
-			console.log(newrows.length);
-
-			this.setState({rows: newrows});
-			this.setState({name: ""});
-			this.setState({surname: ""});
-			this.setState({country: ""});
-			this.setState({birthday: ""}, () => {
-				console.log(this.state.rows);
-			console.log(this.state.name);
-			console.log(this.state.surname);
-			console.log(this.state.country);
-			console.log(this.state.birthday);
-			});
+			let newrows = [this.state.rows, row];
+			this.setState({
+				rows: newrows,
+				name: "",
+				surname: "",
+				country: "countries",
+				birthday: ""});
 		}
 	}
 
@@ -108,6 +94,10 @@ export class Container extends React.Component {
 			<div id="cont"> 
 				<div id="forminputs">
 					<Form  
+					name={this.state.name}
+					surname={this.state.surname}
+					country={this.state.country}
+					birthday={this.state.birthday}
 					changeName={this.changeName}
 					changeSurname={this.changeSurname}
 					changeSelect={this.changeSelect}

@@ -21,7 +21,7 @@ export class Form extends React.Component {
 		fetch('https://restcountries.eu/rest/v2/all').then(response => {
 			return response.json();
 		}).then(data => {
-			let countryNames = data.map(elem => <option value={elem['name'].toLowerCase()}>{elem['name']}</option>);
+			let countryNames = data.map(elem => <option value={elem['name']}>{elem['name']}</option>);
 			this.setState({countries: countryNames});
 		});
 	}
@@ -51,14 +51,14 @@ export class Form extends React.Component {
 
 		return (
 				<form id="form">
-					<p>Name: </p><input type="text" name="name" placeholder=" name here" onChange={this.handleName}/><br/>
-					<p>Surname: </p><input type="text" name="surname" placeholder=" name here" onChange={this.handleSurname}/><br/>
+					<p>Name: </p><input type="text" name="name" value={this.props.name} placeholder=" name here" onChange={this.handleName}/><br/>
+					<p>Surname: </p><input type="text" name="surname" value={this.props.surname} placeholder=" name here" onChange={this.handleSurname}/><br/>
 					<p>Country: </p>
-					<select placeholder="Countries" value="countries" onChange={this.handleSelect}>
+					<select value={this.props.country} onChange={this.handleSelect}>
 						<option value="countries" disabled>Countries</option>
 						{this.state.countries}
 					</select><br/>
-					<p>Birthday: </p><input type="text" name="birthday" placeholder=" mm/dd/yyyy" onChange={this.handleBirthday}/><br/>
+					<p>Birthday: </p><input type="text" name="birthday" value={this.props.birthday} placeholder=" mm/dd/yyyy" onChange={this.handleBirthday}/><br/>
 					<button type="button" value="save" onClick={this.handleSubmit}>Save</button>
 				</form>
 			)
