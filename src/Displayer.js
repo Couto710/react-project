@@ -4,7 +4,6 @@ import './styles/Displayer.css';
 export class Displayer extends React.Component {
 
 
-
     render() {
 
         return (

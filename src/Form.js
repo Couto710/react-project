@@ -54,8 +54,8 @@ export class Form extends React.Component {
 					<p>Name: </p><input type="text" name="name" placeholder=" name here" onChange={this.handleName}/><br/>
 					<p>Surname: </p><input type="text" name="surname" placeholder=" name here" onChange={this.handleSurname}/><br/>
 					<p>Country: </p>
-					<select placeholder="Countries" onChange={this.handleSelect}>
-						<option value="" disabled selected>Countries</option>
+					<select placeholder="Countries" value="countries" onChange={this.handleSelect}>
+						<option value="countries" disabled>Countries</option>
 						{this.state.countries}
 					</select><br/>
 					<p>Birthday: </p><input type="text" name="birthday" placeholder=" mm/dd/yyyy" onChange={this.handleBirthday}/><br/>
@@ -65,5 +65,3 @@ export class Form extends React.Component {
 		
 	}
 }
-
-//perguntar se tenho que fazer eject para mexer no webpack
