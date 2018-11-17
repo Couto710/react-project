@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Container.css';
 import {Form} from './Form';
 import {Displayer} from './Displayer';
+import {Sentence} from './Sentence';
 
 
 export class Container extends React.Component {
@@ -19,11 +20,6 @@ export class Container extends React.Component {
 					<td>Denmark</td>
 					<td>03/24/1994</td>    
 				</tr>,
-				<tr>
-					<td>Ragnar Lothbrok</td>
-					<td>Denmark</td>
-					<td>03/24/1994</td>    
-				</tr>
 			]
 		};
 
@@ -111,6 +107,7 @@ export class Container extends React.Component {
 				</div>
 
 				<div id="sentence">
+					<Sentence />
 				</div>
 
 			</div>

@@ -2,6 +2,7 @@
 	display: inline-block;
 	margin: 50px 5%;
 	width: 90%;
+	height: 100%;
 }
 
 #forminputs {
@@ -13,10 +14,15 @@
 }
 
 #tablediv {
-	width: 50%;
+	width: 60%;
 	height: 80%;
 	margin: 7px;
 	display: inline-block;
 	position: absolute;
 	border: 2px solid rgb(15, 119, 223);
+}
+
+#sentence {
+	width: 30%;
+	margin-top: 25vh;
 }
