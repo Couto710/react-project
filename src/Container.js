@@ -15,10 +15,10 @@ export class Container extends React.Component {
 			country: "countries",
 			birthday: "",
 			rows: [
-				<tr>
-					<td>Ragnar Lothbrok</td>
-					<td>Denmark</td>
-					<td>03/24/1994</td>    
+				<tr key="0" onClick={this.tableClick}>
+					<td value="0">Ragnar Lothbrok</td>
+					<td value="0">Denmark</td>
+					<td value="0">03/24/1994</td>    
 				</tr>,
 			],
 			selected: 0
@@ -29,26 +29,28 @@ export class Container extends React.Component {
 		this.changeSelect = this.changeSelect.bind(this);
 		this.changeBirthday = this.changeBirthday.bind(this);
 		this.checkForm = this.checkForm.bind(this);
+		this.tableClick = this.tableClick.bind(this);
 	}
 
 	changeName(newname){
 		this.setState({name: newname});
-		//console.log(this.state.name);
 	}
 
 	changeSurname(newsurname) {
 		this.setState({surname: newsurname});
-		//console.log(this.state.surname);
 	}
 
 	changeSelect(newcountry) {
 		this.setState({country: newcountry});
-		//console.log(this.state.country);
 	}
 
 	changeBirthday(newbirthday) {
 		this.setState({birthday: newbirthday});
-		//console.log(this.state.birthday);
+	}
+
+	tableClick(e) {
+		console.log(e.target.getAttribute('value'));
+		this.setState({selected: parseInt(e.target.getAttribute('value'))});
 	}
 
 	checkForm(){
@@ -68,15 +70,14 @@ export class Container extends React.Component {
 
 		else{
 			let fullname = this.state.name + " " + this.state.surname;
-			
-			let row =<tr>
-						<td>{fullname}</td>
-						<td>{this.state.country}</td>
-						<td>{this.state.birthday}</td>    
+			let newselected = this.state.rows.length;
+			let row =<tr key={String(newselected)} onClick={this.tableClick}>
+						<td value={String(newselected)}>{fullname}</td>
+						<td value={String(newselected)}>{this.state.country}</td>
+						<td value={String(newselected)}>{this.state.birthday}</td>    
 					</tr>;
 			
 			let newrows = this.state.rows.concat([row]);
-			let newselected = this.state.rows.length;
 			this.setState({
 				rows: newrows,
 				name: "",
