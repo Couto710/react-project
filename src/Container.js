@@ -3,12 +3,15 @@ import './styles/Container.css';
 import {Form} from './Form';
 import {Displayer} from './Displayer';
 import {Sentence} from './Sentence';
+import {Signature} from './Signature';
 
 
 export class Container extends React.Component {
 
 	constructor(props){
 		super(props);
+
+		this.tableClick = this.tableClick.bind(this);
 		this.state={
 			name: "",
 			surname: "",
@@ -29,7 +32,6 @@ export class Container extends React.Component {
 		this.changeSelect = this.changeSelect.bind(this);
 		this.changeBirthday = this.changeBirthday.bind(this);
 		this.checkForm = this.checkForm.bind(this);
-		this.tableClick = this.tableClick.bind(this);
 	}
 
 	changeName(newname){
@@ -49,7 +51,6 @@ export class Container extends React.Component {
 	}
 
 	tableClick(e) {
-		console.log(e.target.getAttribute('value'));
 		this.setState({selected: parseInt(e.target.getAttribute('value'))});
 	}
 
@@ -118,7 +119,12 @@ export class Container extends React.Component {
 					<Sentence row={this.state.rows[this.state.selected]}/>
 				</div>
 
+				<div id="signature">
+					<Signature name={this.state.rows[this.state.selected]} />
+				</div>
+
 			</div>
 		)
 	}
+
 }

@@ -18,11 +18,12 @@
 }
 
 #tablediv {
-	width: 60%;
+	width: 62%;
 	min-width: 360px;
 	height: 70%;
 	margin: 7px;
 	display: inline-block;
+	float: right;
 	position: absolute;
 	border: 2px solid rgb(15, 119, 223);
 	@media only screen and (max-width: 950px) {
@@ -33,9 +34,17 @@
 
 #sentence {
 	width: 30%;
-	margin-top: 20vh;
+	margin-top: 25vh;
 	@extend %width-limit;
 	@media only screen and (max-height: 640px) {
 		margin-top: 10vh;
 	}
+}
+
+#signature {
+	text-align: right;
+	margin-top: 10%;
+	margin-right: 2%; 
+	//margin-right: 10%;
+	position: relative;
 }
