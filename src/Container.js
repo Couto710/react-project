@@ -20,7 +20,8 @@ export class Container extends React.Component {
 					<td>Denmark</td>
 					<td>03/24/1994</td>    
 				</tr>,
-			]
+			],
+			selected: 0
 		};
 
 		this.changeName = this.changeName.bind(this);
@@ -74,13 +75,19 @@ export class Container extends React.Component {
 						<td>{this.state.birthday}</td>    
 					</tr>;
 			
-			let newrows = [this.state.rows, row];
+			let newrows = this.state.rows.concat([row]);
+			let newselected = this.state.rows.length;
 			this.setState({
 				rows: newrows,
 				name: "",
 				surname: "",
 				country: "countries",
-				birthday: ""});
+				birthday: ""
+			}, () => {
+				this.setState({
+					selected: newselected
+				})
+			});
 		}
 	}
 
@@ -107,7 +114,7 @@ export class Container extends React.Component {
 				</div>
 
 				<div id="sentence">
-					<Sentence />
+					<Sentence row={this.state.rows[this.state.selected]}/>
 				</div>
 
 			</div>
