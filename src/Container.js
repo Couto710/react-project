@@ -34,35 +34,35 @@ export class Container extends React.Component {
 		this.checkForm = this.checkForm.bind(this);
 	}
 
-	changeName(newname){
-		this.setState({name: newname});
+	changeName = e => {
+		this.setState({name: e.target.value});
 	}
 
-	changeSurname(newsurname) {
-		this.setState({surname: newsurname});
+	changeSurname = e => {
+		this.setState({surname: e.target.value});
 	}
 
-	changeSelect(newcountry) {
-		this.setState({country: newcountry});
+	changeSelect = e => {
+		this.setState({country: e.target.value});
 	}
 
-	changeBirthday(newbirthday) {
-		this.setState({birthday: newbirthday});
+	changeBirthday = e => {
+		this.setState({birthday: e.target.value});
 	}
 
-	tableClick(e) {
+	tableClick = e => {
 		this.setState({selected: parseInt(e.target.getAttribute('value'))});
 	}
 
-	checkForm(){
+	checkForm = () => {
 
-		if(/^[a-z]*$/i.test(this.state.name) === false || this.state.name.length === 0){
+		if(/^[a-zãáéêõóí]*$/i.test(this.state.name) === false || this.state.name.length === 0){
 			alert("Name is not valid! No special characters allowed, or empty field. Error: " + this.state.name);
 		}
-		else if(/^[a-z]*$/i.test(this.state.surname) === false || this.state.surname.length === 0){
+		else if(/^[a-zãáéêõóí]*$/i.test(this.state.surname) === false || this.state.surname.length === 0){
 			alert("Surname is not valid! No special characters allowed, or empty field. Error: " + this.state.surname);
 		}
-		else if(this.state.country.length === 0){
+		else if(this.state.country === "countries"){
 			alert("Please choose a country!");
 		}
 		else if(/^(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01])\/([01]\d{3}|200\d|201[0-8])$/.test(this.state.birthday) === false){
@@ -78,7 +78,7 @@ export class Container extends React.Component {
 						<td value={String(newselected)}>{this.state.birthday}</td>    
 					</tr>;
 			
-			let newrows = this.state.rows.concat([row]);
+			let newrows = [...this.state.rows, row];
 			this.setState({
 				rows: newrows,
 				name: "",
@@ -93,7 +93,7 @@ export class Container extends React.Component {
 		}
 	}
 
-	render() {
+	render = () => {
 		return (
 
 			<div id="cont"> 

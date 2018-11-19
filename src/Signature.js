@@ -4,7 +4,7 @@ import './styles/Signature.css'
 export class Signature extends React.Component {
 
 
-    render() {
+    render = () => {
 
         let name = this.props.name.props.children[0].props.children;
 

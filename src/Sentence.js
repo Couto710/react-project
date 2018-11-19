@@ -21,8 +21,7 @@ export class Sentence extends React.Component {
     today = new Date();
     year = this.today.getFullYear();
 
-
-    render() {
+    render = () => {
 
         let name = this.props.row.props.children[0].props.children;
         let country = this.props.row.props.children[1].props.children;
