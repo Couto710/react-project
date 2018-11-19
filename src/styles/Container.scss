@@ -23,13 +23,20 @@
 	height: 70%;
 	margin: 7px;
 	display: inline-block;
-	float: right;
 	position: absolute;
-	border: 2px solid rgb(15, 119, 223);
 	@media only screen and (max-width: 950px) {
 		width: 50%;
 		
 	}
+}
+
+#display {
+	width: 100%;
+	min-width: 360px;
+	height: 90%;
+	display: inline-block;
+	position: absolute;
+	border: 2px solid rgb(15, 119, 223);
 }
 
 #sentence {
@@ -43,8 +50,10 @@
 
 #signature {
 	text-align: right;
-	margin-top: 10%;
-	margin-right: 2%; 
-	//margin-right: 10%;
+	vertical-align: bottom;
 	position: relative;
+	display: inline-block;
+	width: 50%;
+	top: 90%;
+	margin-left: 50%;
 }

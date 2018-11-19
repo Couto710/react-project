@@ -112,15 +112,18 @@ export class Container extends React.Component {
 				</div>
 
 				<div id="tablediv">
-					<Displayer rows={this.state.rows}/>
+					<div id="display">
+						<Displayer rows={this.state.rows}/>
+					</div>
+
+					<div id="signature">
+							<Signature name={this.state.rows[this.state.selected]} />
+					</div>
 				</div>
+
 
 				<div id="sentence">
 					<Sentence row={this.state.rows[this.state.selected]}/>
-				</div>
-
-				<div id="signature">
-					<Signature name={this.state.rows[this.state.selected]} />
 				</div>
 
 			</div>
