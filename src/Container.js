@@ -26,25 +26,14 @@ export class Container extends React.Component {
 		this.changeBirthday = this.changeBirthday.bind(this);
 		this.checkForm = this.checkForm.bind(this);
 		this.tableClick = this.tableClick.bind(this);
-		//this.rebuildRows = this.rebuildRows.bind(this);
 	}
 
-	/*componentDidMount() {
+	componentDidMount() {
 		if (localStorage.getItem('state') !== null) {
 			this.setState(JSON.parse(localStorage.getItem('state')));
 		}
 	}
 
-	rebuildRows = (rows) => {
-
-		return rows.map((r, index) => (
-			<tr key={index} onClick={this.tableClick}>
-				<td value={index}>{fullname}</td>
-				<td value={index}>{this.state.country}</td>
-				<td value={index}>{this.state.birthday}</td>
-			</tr>
-		));
-	}*/
 
 	changeName = e => {
 		this.setState({ name: e.target.value });
@@ -99,6 +88,8 @@ export class Container extends React.Component {
 				country: "countries",
 				birthday: "",
 				selected: newselected
+			}, () => {
+				localStorage.setItem('state', JSON.stringify(this.state));
 			});
 		}
 	}
