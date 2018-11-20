@@ -5,6 +5,14 @@ export class Displayer extends React.Component {
 
     render = () => {
 
+        let rows = this.props.rows.map(r => (
+            <tr key={r.key} onClick={this.props.onClick}>
+				<td value={r.key}>{r.name}</td>
+				<td value={r.key}>{r.country}</td>
+				<td value={r.key}>{r.birthday}</td>
+			</tr>
+        ));
+
         return (
             <table id="table">
             <tbody>
@@ -13,7 +21,7 @@ export class Displayer extends React.Component {
                     <th id="r2">Country</th>
                     <th id="r3">birthday</th>    
                 </tr>
-                {this.props.rows}
+                {rows}
             </tbody>
             </table>
         )

@@ -5,11 +5,9 @@ export class Signature extends React.Component {
 
 
     render = () => {
-        
-        let name = this.props.name === "" ? "" : this.props.name.props.children[0].props.children;
-
+    
         return (
-            <p id="sig">{name} </p>
+            <p id="sig">{this.props.name} </p>
         )
     }
 }
