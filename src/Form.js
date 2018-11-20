@@ -5,7 +5,9 @@ export class Form extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.countrylist = [];
+		this.state ={
+			countries: [],
+		};
 	}
 
 	componentWillMount = () => {
@@ -14,8 +16,8 @@ export class Form extends React.Component {
 			return response.json();
 		}).then(data => {
 			let counter = 0;
-			this.countrylist = data.map(elem => <option key={counter++} value={elem['name']}>{elem['name']}</option>);
-			this.forceUpdate();
+			let countryNames = data.map(elem => <option key={counter++} value={elem['name']}>{elem['name']}</option>);
+			this.setState({countries: countryNames});
 		});
 	}	
 
@@ -28,7 +30,7 @@ export class Form extends React.Component {
 					<p>Country: </p>
 					<select value={this.props.country} onChange={this.props.changeSelect}>
 						<option value="countries" disabled>Countries</option>
-						{this.countrylist}
+						{this.state.countries}
 					</select><br/>
 					<p>Birthday: </p><input type="text" name="birthday" value={this.props.birthday} placeholder=" mm/dd/yyyy" onChange={this.props.changeBirthday}/><br/>
 					<button type="button" value="save" onClick={this.props.submit}>Save</button>
