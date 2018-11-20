@@ -23,12 +23,15 @@ export class Sentence extends React.Component {
 
     render = () => {
 
-        let name = this.props.row.props.children[0].props.children;
-        let country = this.props.row.props.children[1].props.children;
-        let birthday = this.props.row.props.children[2].props.children.split("/");
+        if (this.props.row !== "") {
+            let name = this.props.row.props.children[0].props.children;
+            let country = this.props.row.props.children[1].props.children;
+            let birthday = this.props.row.props.children[2].props.children.split("/");
 
-        return (
-            <p id="years">Hello {name} from {country}, on {birthday[1]} of {this.months[birthday[0]]} you will be {this.year - birthday[2]}</p>
-        );
+            return (
+                <p id="years">Hello {name} from {country}, on {birthday[1]} of {this.months[birthday[0]]} you will be {this.year - birthday[2]}</p>
+            );
+        }
+        return null;
     }
 }

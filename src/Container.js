@@ -17,13 +17,7 @@ export class Container extends React.Component {
 			surname: "",
 			country: "countries",
 			birthday: "",
-			rows: [
-				<tr key="0" onClick={this.tableClick}>
-					<td value="0">Ragnar Lothbrok</td>
-					<td value="0">Denmark</td>
-					<td value="0">03/24/1994</td>    
-				</tr>,
-			],
+			rows: [],
 			selected: 0
 		};
 
@@ -117,13 +111,13 @@ export class Container extends React.Component {
 					</div>
 
 					<div id="signature">
-							<Signature name={this.state.rows[this.state.selected]} />
+							<Signature name={this.state.rows.length === 0 ? "" : this.state.rows[this.state.selected]} />
 					</div>
 				</div>
 
 
 				<div id="sentence">
-					<Sentence row={this.state.rows[this.state.selected]}/>
+					<Sentence row={this.state.rows.length === 0 ? "" : this.state.rows[this.state.selected]}/>
 				</div>
 
 			</div>

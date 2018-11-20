@@ -7,12 +7,14 @@ export class Displayer extends React.Component {
 
         return (
             <table id="table">
+            <tbody>
                 <tr id ="headrow">
                     <th id="r1">name</th>
                     <th id="r2">Country</th>
                     <th id="r3">birthday</th>    
                 </tr>
                 {this.props.rows}
+            </tbody>
             </table>
         )
     }
