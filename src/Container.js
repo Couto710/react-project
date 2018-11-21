@@ -19,13 +19,6 @@ export class Container extends React.Component {
 			rows: [],
 			selected: 0
 		};
-
-		this.changeName = this.changeName.bind(this);
-		this.changeSurname = this.changeSurname.bind(this);
-		this.changeSelect = this.changeSelect.bind(this);
-		this.changeBirthday = this.changeBirthday.bind(this);
-		this.checkForm = this.checkForm.bind(this);
-		this.tableClick = this.tableClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -71,11 +64,10 @@ export class Container extends React.Component {
 		}
 
 		else {
-			let fullname = this.state.name + " " + this.state.surname;
-			let newselected = this.state.rows.length;
+			let newselected = this.state.rows.length
 			let row = {
 				key: newselected,
-				name: fullname,
+				name: this.state.name + " " + this.state.surname,
 				country: this.state.country,
 				birthday: this.state.birthday
 			};

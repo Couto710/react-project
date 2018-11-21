@@ -1,13 +1,7 @@
 import React from 'react';
 import './styles/Signature.css'
 
-export class Signature extends React.Component {
+export const Signature = ({name}) => {
 
-
-    render = () => {
-    
-        return (
-            <p id="sig">{this.props.name} </p>
-        )
-    }
+    return <p id="sig">{name}</p>;
 }

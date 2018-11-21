@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/Sentence.css';
 
-export class Sentence extends React.Component {
+export const Sentence = ({row}) => {
 
-    months = {
+    const months = {
         "01": "January",
         "02": "February",
         "03": "March",
@@ -18,18 +18,15 @@ export class Sentence extends React.Component {
         "12": "December"
     };
 
-    today = new Date();
-    year = this.today.getFullYear();
+    const today = new Date();
+    const year = today.getFullYear();
 
-    render = () => {
+    if(row !== ""){
+        let birthday = row.birthday.split("/");
 
-        if (this.props.row !== "") {
-            let birthday = this.props.row.birthday.split("/");
-
-            return (
-                <p id="years">Hello {this.props.row.name} from {this.props.row.country}, on {birthday[1]} of {this.months[birthday[0]]} you will be {this.year - birthday[2]}</p>
-            );
-        }
-        return null;
+        return (
+            <p id="years">Hello {row.name} from {row.country}, on {birthday[1]} of {months[birthday[0]]} you will be {year - birthday[2]}</p>
+        )
     }
+    return null;
 }
